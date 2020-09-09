@@ -1,14 +1,14 @@
 var date = new Date();
-var hours, minutes, seconds, milliSeconds;
-hours = date.getHours();
+var hour, minutes, seconds, milliSeconds;
+hour = date.getHours();
 minutes = date.getMinutes();
 seconds = date.getSeconds();
 document.getElementsByClassName("date")[0].innerText = date.getDate() + " - " + date.getUTCMonth() + " - " + date.getFullYear();
 setInterval(function() {
 
     // milliSeconds = date.getMilliseconds();
-    console.log(hours + "" + minutes + "" + seconds + "" + milliSeconds);
-    document.getElementsByClassName("hour")[0].innerText = hours;
+    console.log(hour + "" + minutes + "" + seconds + "" + milliSeconds);
+    document.getElementsByClassName("hour")[0].innerText = hour;
     document.getElementsByClassName("minute")[0].innerText = minutes;
     document.getElementsByClassName("second")[0].innerText = seconds++;
     // document.getElementsByClassName("millisecond")[0].innerText = milliSeconds;
@@ -17,12 +17,12 @@ setInterval(function() {
         seconds = 0;
     }
     if ((document.getElementsByClassName("minute")[0].innerText) > 59) {
-        hours++;
+        hour++;
         minutes = 0;
     }
 
     if ((document.getElementsByClassName("hour")[0].innerText) > 23) {
-        hours = 0;
+        hour = 0;
         minutes = 0;
     }
 
